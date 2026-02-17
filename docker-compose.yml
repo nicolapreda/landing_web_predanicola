@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  web:
+    build: .
+    container_name: landing_web_predanicola
+    restart: always
+    ports:
+      - "3007:3007"
+    networks:
+      - nginx_network
+
+networks:
+  nginx_network:
+    external: true

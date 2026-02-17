@@ -1,12 +1,35 @@
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #020410; /* Very Dark Blue/Black */
+  --foreground: #ffffff;
+  --primary-blue: #0022cc; /* Darker Electric Blue */
+  --surface: rgba(255, 255, 255, 0.03); /* Glassy Dark Surface */
+  --surface-highlight: rgba(255, 255, 255, 0.08);
+  
+  --border-color: rgba(255, 255, 255, 0.1);
+  --primary-yellow: #FFFF00;
+  
+  --text-secondary: #a1a1aa; /* Light Gray for dark mode */
+  --section-spacing: 8rem;
+  
+  --container-width: 1200px;
+  --container-padding: 2rem;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  /* Dark Grid Pattern */
+  background-image: 
+    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 50px 50px;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #020410;
+    --foreground: #ffffff;
+    --text-secondary: #a1a1aa;
   }
 }
 
@@ -14,12 +37,13 @@ html,
 body {
   max-width: 100vw;
   overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -35,8 +59,10 @@ a {
   text-decoration: none;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
+h1, h2, h3, h4, h5, h6 {
+  font-weight: normal;
+}
+
+ul, ol {
+  list-style: none;
 }

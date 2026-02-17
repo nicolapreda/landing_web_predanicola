@@ -1,0 +1,75 @@
+.section {
+  padding: var(--section-spacing) 0;
+  background: transparent;
+}
+
+.container {
+  max-width: var(--container-width);
+  padding: 0 var(--container-padding);
+  margin: 0 auto;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.title {
+  font-size: 3.5rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  line-height: 0.9;
+  color: #fff;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  background: transparent;
+  border: none;
+}
+
+.card {
+  background: var(--surface);
+  padding: 3rem 2rem;
+  text-align: center;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+}
+
+.card:hover {
+  border-color: var(--primary-blue);
+  box-shadow: 0 0 20px rgba(0, 34, 204, 0.2);
+}
+
+.score {
+  font-size: 6rem;
+  font-weight: 900;
+  color: var(--primary-blue);
+  line-height: 0.8;
+  margin-bottom: 1rem;
+  display: block;
+  text-shadow: 0 0 30px rgba(0, 34, 204, 0.4);
+}
+
+.metric {
+  font-size: 1.5rem;
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+  display: block;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+.desc {
+  color: var(--text-secondary);
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
