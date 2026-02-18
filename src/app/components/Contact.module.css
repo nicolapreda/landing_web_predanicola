@@ -78,3 +78,33 @@
   box-shadow: 0 0 30px rgba(0, 34, 204, 0.6);
   background: #0033ff;
 }
+
+@media (max-width: 768px) {
+  .section {
+    padding: 2rem 0; /* Less vertical padding */
+  }
+
+  .container {
+    padding: 0; /* Remove container padding to maximize width */
+  }
+
+  .form {
+    padding: 1.25rem 1rem; /* minimal horizontal padding */
+    width: 100%;
+    border-radius: 12px; /* Ensure radius is visible */
+  }
+
+  .title {
+    font-size: 1.8rem; /* Smaller title on mobile */
+    margin-bottom: 2rem;
+  }
+
+  .input, .textarea, .select {
+    padding: 1.2rem; /* Taller inputs for easier tapping */
+    font-size: 1rem;
+  }
+
+  .button {
+    padding: 1.5rem; /* Larger button */
+  }
+}

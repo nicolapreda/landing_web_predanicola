@@ -4,11 +4,12 @@
   display: flex;
   justify-content: center; /* Center the pill */
   align-items: center;
-  position: absolute;
+  position: fixed; /* Changed from absolute to fixed */
   top: 0;
   left: 0;
-  z-index: 100;
+  z-index: 1000; /* Increased z-index */
   background: transparent;
+  pointer-events: none; /* Allow clicking through the header container */
 }
 
 .navPill {
@@ -20,6 +21,7 @@
   padding: 0.5rem 0.5rem 0.5rem 1.5rem; /* Balanced padding */
   border-radius: 50px;
   border: 1px solid rgba(255, 255, 255, 0.1);
+  pointer-events: auto; /* Re-enable clicks */
 }
 
 .logo {
@@ -70,31 +72,39 @@
 }
 
 @media (max-width: 768px) {
-  .navPill {
-    /* Show pill container but remove styles */
-    background: transparent;
-    backdrop-filter: none;
-    border: none;
-    padding: 0;
-    width: 100%;
+  .header {
+    padding: 1rem;
     justify-content: center;
   }
+
+  .navPill {
+    /* Restore pill styles */
+    width: 100%;
+    max-width: 400px; /* Prevent it from being too wide on tablets */
+    justify-content: space-between;
+    padding: 0.5rem 0.5rem 0.5rem 1rem;
+    background: rgba(255, 255, 255, 0.05); /* Restore background */
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    gap: 0; /* Reset gap */
+  }
   
-  .links, .cta {
-    display: none; /* Hide nav items on mobile */
+  .links {
+    display: none; /* Keep links hidden */
+  }
+
+  .cta {
+    display: block; /* Show CTA */
+    padding: 0.5rem 1rem; /* Smaller padding for mobile */
+    font-size: 0.85rem;
   }
 
   .logo {
-    margin-right: 0; /* Center logo perfectly */
+    margin-right: 0;
   }
   
-  .header {
-    justify-content: center;
-    padding: 1rem;
-  }
-
   .logoImage {
-    height: 30px;
+    height: 24px; /* Smaller logo */
     width: auto;
   }
 }
