@@ -1,11 +1,11 @@
 .page {
-  min-height: 100vh;
   width: 100%;
-  background-color: var(--background);
+  height: 100%;
 }
 
 .main {
-  width: 100%;
   display: flex;
   flex-direction: column;
+  gap: 0; /* Removing large gaps managed by sections */
+  width: 100%;
 }

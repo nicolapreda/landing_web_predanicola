@@ -1,49 +1,84 @@
 .section {
-  display: grid;
-  grid-template-columns: 1fr 2fr;
-  padding: 4rem 2rem;
-  max-width: 1200px;
+  position: relative;
+  padding: var(--section-spacing) var(--container-padding);
+  max-width: var(--container-width);
   margin: 0 auto;
-  gap: 2rem;
+  overflow: visible;
+}
+
+/* Using global body grid instead of local one to avoid easy misalignment */
+.gridBackground {
+  display: none; 
 }
 
 .title {
-  font-size: 0.8rem;
+  font-size: 3rem;
   font-weight: 700;
-  text-transform: uppercase;
-  color: #888; /* Grey color for the label */
-  letter-spacing: 0.05em;
+  margin-bottom: 2rem;
+  color: #fff;
+  text-shadow: 0 0 20px rgba(41, 98, 255, 0.5); /* Electric Glow */
 }
 
 .content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.textContent {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 1.5rem;
 }
 
 .text {
-  font-size: 1.2rem;
+  font-size: 1.25rem;
   line-height: 1.6;
-  max-width: 600px;
+  color: var(--text-secondary);
+}
+
+.text strong {
+  color: #fff;
+  font-weight: 600;
 }
 
 .imageContainer {
+  position: relative;
   width: 100%;
   aspect-ratio: 3/4;
-  background-color: #eee;
-  position: relative;
+  border-radius: var(--border-radius-lg);
   overflow: hidden;
-  border: 1px solid var(--primary-blue);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.5), 0 0 20px rgba(41, 98, 255, 0.2);
+  border: 1px solid var(--border-color);
+  transform: rotate(2deg);
+  transition: transform 0.3s ease;
 }
 
-.imagePlaceholder {
+.imageContainer:hover {
+  transform: rotate(0deg) scale(1.02);
+}
+
+.image {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
 @media (max-width: 768px) {
-  .section {
+  .content {
     grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .title {
+    font-size: 2.5rem;
+    text-align: center;
+  }
+  
+  .imageContainer {
+    max-width: 400px;
+    margin: 0 auto;
+    transform: rotate(0);
   }
 }

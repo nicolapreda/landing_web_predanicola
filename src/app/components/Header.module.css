@@ -1,33 +1,37 @@
 .header {
-  position: fixed;
-  top: 0;
   width: 100%;
-  padding: 1rem 2rem;
-  background: rgba(255, 255, 255, 0.8);
-  backdrop-filter: blur(12px);
-  z-index: 100;
-  border-bottom: 1px solid rgba(0,0,0,0.05);
-}
-
-@media (prefers-color-scheme: dark) {
-  .header {
-    background: rgba(5, 5, 5, 0.8);
-    border-bottom: 1px solid rgba(255,255,255,0.05);
-  }
-}
-
-.nav {
+  padding: 1.5rem 2rem;
   display: flex;
-  justify-content: space-between;
+  justify-content: center; /* Center the pill */
   align-items: center;
-  max-width: 1200px;
-  margin: 0 auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  background: transparent;
+}
+
+.navPill {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  padding: 0.5rem 0.5rem 0.5rem 1.5rem; /* Balanced padding */
+  border-radius: 50px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .logo {
-  font-weight: 900;
-  font-size: 1.5rem;
-  letter-spacing: -0.05em;
+  display: block;
+  /* Removed absolute positioning */
+  margin-right: 1rem;
+}
+
+.logoImage {
+  width: auto;
+  height: 32px; /* Slightly smaller to fit pill */
+  object-fit: contain;
 }
 
 .links {
@@ -37,32 +41,60 @@
 }
 
 .link {
-  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: none;
   font-weight: 500;
-  color: var(--text-secondary);
   transition: color 0.2s;
+  font-size: 0.95rem;
 }
 
 .link:hover {
-  color: var(--primary-blue);
+  color: #fff;
 }
 
 .cta {
-  background: var(--foreground);
-  color: var(--background);
-  padding: 0.5rem 1.2rem;
-  border-radius: 99px;
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  padding: 0.75rem 1.5rem; /* Bigger, better spacing */
+  border-radius: 50px; /* Fully rounded */
+  text-decoration: none;
   font-weight: 600;
-  font-size: 0.9rem;
-  transition: opacity 0.2s;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.2s;
+  white-space: nowrap;
 }
 
 .cta:hover {
-  opacity: 0.9;
+  background: rgba(255, 255, 255, 0.2);
+  border-color: #fff;
 }
 
 @media (max-width: 768px) {
-  .links {
-    display: none; /* Mobile menu implementation later if requested, for now hide */
+  .navPill {
+    /* Show pill container but remove styles */
+    background: transparent;
+    backdrop-filter: none;
+    border: none;
+    padding: 0;
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .links, .cta {
+    display: none; /* Hide nav items on mobile */
+  }
+
+  .logo {
+    margin-right: 0; /* Center logo perfectly */
+  }
+  
+  .header {
+    justify-content: center;
+    padding: 1rem;
+  }
+
+  .logoImage {
+    height: 30px;
+    width: auto;
   }
 }

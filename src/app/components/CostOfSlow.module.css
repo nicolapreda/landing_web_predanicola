@@ -1,71 +1,80 @@
 .section {
-  padding: var(--section-spacing) 0;
-  background: var(--background);
-  border-bottom: 2px solid #000;
+  width: 100%;
 }
 
 .container {
-  max-width: var(--container-width);
-  padding: 0 var(--container-padding);
-  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
   text-align: center;
 }
 
 .title {
-  font-size: 3.5rem;
-  font-weight: 900;
-  margin-bottom: 4rem;
-  text-transform: uppercase;
-  line-height: 0.9;
+  font-size: 3rem;
+  font-weight: 700;
   color: #fff;
+  line-height: 1.1;
+}
+
+.subtitle {
+  font-size: 1.25rem;
+  color: var(--text-secondary);
+  max-width: 600px;
 }
 
 .grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 1rem;
-  border: none;
-  background: transparent;
+  gap: 2rem;
+  width: 100%;
+  margin-top: 1rem;
 }
 
 .card {
-  padding: 3rem 2rem;
-  background: var(--surface);
-  border: 1px solid var(--border-color);
-  border-radius: 8px;
-  transition: border-color 0.3s;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 2.5rem 1.5rem;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  transition: transform 0.3s ease, border-color 0.3s ease;
 }
 
 .card:hover {
+  transform: translateY(-5px);
   border-color: var(--primary-blue);
+  background: rgba(41, 98, 255, 0.05);
 }
 
 .number {
-  font-size: 5rem;
-  font-weight: 900;
-  color: var(--primary-blue);
+  font-size: 3.5rem;
+  font-weight: 800;
+  color: #ff4444; /* Alert color */
+  line-height: 1;
   margin-bottom: 0.5rem;
-  line-height: 0.9;
-  display: block;
-  text-shadow: 0 0 30px rgba(0, 34, 204, 0.4);
 }
 
 .label {
-  font-weight: 800;
-  font-size: 1.2rem;
-  margin-bottom: 0.5rem;
-  display: block;
-  text-transform: uppercase;
+  font-size: 1.1rem;
+  font-weight: 600;
   color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
-.desc {
+.description {
   font-size: 1rem;
   color: var(--text-secondary);
-  font-weight: 500;
+  line-height: 1.5;
 }
 
 @media (max-width: 768px) {
+  .title {
+    font-size: 2.5rem;
+  }
   .grid {
     grid-template-columns: 1fr;
   }

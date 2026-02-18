@@ -1,11 +1,12 @@
 :root {
-  --background: #020410; /* Very Dark Blue/Black */
+  --background: #050a1f; /* A darker, rich blue */
   --foreground: #ffffff;
-  --primary-blue: #0022cc; /* Darker Electric Blue */
+  --primary-blue: #2962FF; /* Bright Electric Blue */
+  --primary-blue-dim: rgba(41, 98, 255, 0.1);
   --surface: rgba(255, 255, 255, 0.03); /* Glassy Dark Surface */
   --surface-highlight: rgba(255, 255, 255, 0.08);
   
-  --border-color: rgba(255, 255, 255, 0.1);
+  --border-color: rgba(41, 98, 255, 0.2); /* Electric Blue Border */
   --primary-yellow: #FFFF00;
   
   --text-secondary: #a1a1aa; /* Light Gray for dark mode */
@@ -13,23 +14,78 @@
   
   --container-width: 1200px;
   --container-padding: 2rem;
+  --border-radius-lg: 2rem;
 }
 
 body {
-  background-color: var(--background);
+  background-color: #00020a; /* Dark background outside the card */
   color: var(--foreground);
-  /* Dark Grid Pattern */
+  padding: 2rem; /* Margin from screen edges */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Create a "Main Card" wrapper class if needed, or apply to a wrapper div in layout/page. 
+   But since user wants "the page" to be the card, applying to a wrapper inside body or main is best.
+   Let's target the next.js root div or main if possible, but simplest is to style a wrapper.
+   Actually, looking at previous layout.tsx, body has children directly. 
+   I will style the `main` or a wrapper div in `page.tsx` mostly, but here I set the global defaults.
+   Wait, the user wants the WHOLE page to check like a card.
+*/
+
+main {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 16rem; /* Huge gap for clear separation */
+  align-items: center; /* Center cards horizontally */
+  padding-bottom: 8rem;
+}
+
+@media (max-width: 768px) {
+  main {
+    gap: 6rem; /* Much smaller gap on mobile */
+    padding-bottom: 4rem;
+  }
+}
+
+.section-card {
+  background-color: var(--background);
+  /* Electric Blue Grid Pattern */
   background-image: 
-    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    linear-gradient(var(--primary-blue-dim) 1px, transparent 1px),
+    linear-gradient(90deg, var(--primary-blue-dim) 1px, transparent 1px);
   background-size: 50px 50px;
+  
+  border-radius: 40px;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 0 50px rgba(41, 98, 255, 0.1);
+  overflow: hidden;
+  width: 100%;
+  max-width: 1400px; /* Constrain max width for large screens */
+  margin: 0 auto 12rem auto; /* Center specifically AND add bottom margin */
+  padding: 4rem 2rem;
+  
+  /* Ensure content inside doesn't touch edges uncomfortably */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@media (max-width: 768px) {
+  .section-card {
+    margin: 0 1rem 4rem 1rem; /* Reduced bottom margin on mobile */
+    padding: 2rem 1rem;
+    border-radius: 20px;
+  }
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #020410;
+    /* Ensure we keep the same values for consistency, or just let the root values apply */
+    --background: #050a1f;
     --foreground: #ffffff;
-    --text-secondary: #a1a1aa;
   }
 }
 

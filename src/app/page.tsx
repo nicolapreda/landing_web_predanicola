@@ -1,14 +1,13 @@
 import Header from "./components/Header";
 import Hero from "./components/Hero";
-import ProblemSolution from "./components/ProblemSolution";
 import CostOfSlow from "./components/CostOfSlow";
-import Positioning from "./components/Positioning";
-import ValuePrice from "./components/ValuePrice";
-import Services from "./components/Services";
+import TheMechanism from "./components/TheMechanism";
 import RealResults from "./components/RealResults";
-import TechStack from "./components/TechStack";
-import WhyMe from "./components/WhyMe";
-import Process from "./components/Process";
+import Roi from "./components/Roi";
+import Comparison from "./components/Comparison";
+import Faq from "./components/Faq";
+import FinalCta from "./components/FinalCta";
+import CaseStudies from "./components/CaseStudies";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import styles from "./page.module.css";
@@ -16,21 +15,47 @@ import styles from "./page.module.css";
 export default function Home() {
   return (
     <div className={styles.page}>
-      <Header />
       <main className={styles.main}>
-        <Hero />
-        <ProblemSolution />
-        <CostOfSlow />
-        <Positioning />
-        <ValuePrice />
-        <Services />
-        <RealResults />
-        <TechStack />
-        <WhyMe />
-        <Process />
-        <Contact />
+        <Header />
+        
+        <div className="section-card">
+          <Hero />
+        </div>
+        
+        <div className="section-card">
+          <CostOfSlow />
+        </div>
+        
+        <div className="section-card">
+          <TheMechanism />
+        </div>
+        
+        <div className="section-card">
+          <RealResults />
+        </div>
+
+        <div className="section-card">
+          <Roi />
+        </div>
+
+        <div className="section-card">
+          <CaseStudies />
+        </div>
+
+        <div className="section-card">
+          <Comparison />
+        </div>
+        
+        <div className="section-card">
+          <Faq />
+        </div>
+        
+        <div className="section-card">
+          <Contact />
+        </div>
+        
+        <Footer />
       </main>
-      <Footer />
     </div>
   );
 }

@@ -1,89 +1,81 @@
 .section {
-  padding: var(--section-spacing) 0;
-  background: transparent; 
-  color: #fff;
+  width: 100%;
+  max-width: var(--container-width);
 }
 
 .container {
-  max-width: var(--container-width);
-  padding: 0 var(--container-padding);
-  margin: 0 auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
 }
 
 .title {
-  font-size: 4rem;
-  font-weight: 900;
-  margin-bottom: 4rem;
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
   text-align: center;
-  text-transform: uppercase;
   color: #fff;
-  line-height: 0.9;
+  text-shadow: 0 0 20px rgba(41, 98, 255, 0.5);
 }
 
 .grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 4rem;
-  border-top: 1px solid var(--border-color);
-  padding-top: 4rem;
+  gap: 2rem;
 }
 
 .card {
-  padding: 0;
-}
-
-.cardTitle {
-  font-size: 2rem;
-  font-weight: 900;
-  margin-bottom: 2rem;
-  text-transform: uppercase;
-  display: inline-block;
-  background: var(--surface);
-  border: 1px solid var(--border-color);
-  color: #fff;
-  padding: 0.5rem 1rem;
-  border-radius: 4px;
-}
-
-.me .cardTitle {
-  background: rgba(0, 34, 204, 0.2);
-  border-color: var(--primary-blue);
-  color: var(--primary-blue);
-  box-shadow: 0 0 20px rgba(0, 34, 204, 0.3);
-}
-
-.list {
+  padding: 2rem;
+  border-radius: 2rem;
+  border: 1px solid rgba(255,255,255,0.1);
+  background: rgba(255,255,255,0.02);
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
 }
 
-.item {
-  display: flex;
-  gap: 1rem;
-  font-size: 1.25rem;
-  font-weight: 600;
-  align-items: flex-start;
-  color: var(--text-secondary);
+.me {
+  border-color: var(--primary-blue);
+  background: rgba(41, 98, 255, 0.05);
+  box-shadow: 0 0 30px rgba(41, 98, 255, 0.1);
 }
 
-.me .item {
+.cardTitle {
+  font-size: 1.5rem;
+  font-weight: 600;
   color: #fff;
+  text-align: center;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: var(--text-secondary);
+  font-size: 1rem;
 }
 
 .icon {
-  font-weight: 900;
+  font-weight: bold;
 }
 
-.agency .icon { color: #ef4444; }
-.me .icon { 
-  color: var(--primary-blue);
-  text-shadow: 0 0 10px rgba(0, 34, 204, 0.6);
+.agency .icon {
+  color: #ff4444;
+}
+
+.me .icon {
+  color: #00cc44;
 }
 
 @media (max-width: 768px) {
   .grid {
     grid-template-columns: 1fr;
-    gap: 4rem;
   }
 }

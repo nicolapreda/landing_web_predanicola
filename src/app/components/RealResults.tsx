@@ -4,25 +4,26 @@ export default function RealResults() {
   return (
     <section className={styles.section}>
       <div className={styles.container}>
-        <div className={styles.header}>
-          <h2 className={styles.title}>Performance Reali</h2>
-          <p>Dati misurati con Google PageSpeed Insights su progetti reali.</p>
-        </div>
-        <div className={styles.grid}>
-          <div className={styles.card}>
-            <span className={styles.score}>99</span>
-            <span className={styles.metric}>Performance</span>
-            <span className={styles.desc}>Caricamento istantaneo &lt; 0.5s</span>
+        <h2 className={styles.title}>Risultati Concreti</h2>
+        <p className={styles.subtitle}>Non parole, ma metriche.</p>
+        
+        <div className={styles.metricGrid}>
+          <div className={styles.metricCard}>
+            <div className={styles.metricValue}>-38%</div>
+            <div className={styles.metricLabel}>Tempo di Caricamento</div>
+            <div className={styles.metricSub}>Rispetto al sito precedente</div>
           </div>
-          <div className={styles.card}>
-            <span className={styles.score}>100</span>
-            <span className={styles.metric}>SEO</span>
-            <span className={styles.desc}>Struttura semantica perfetta</span>
+          
+          <div className={styles.metricCard}>
+            <div className={styles.metricValue}>+22%</div>
+            <div className={styles.metricLabel}>Conversion Rate</div>
+            <div className={styles.metricSub}>Grazie alla UX migliorata</div>
           </div>
-          <div className={styles.card}>
-            <span className={styles.score}>100</span>
-            <span className={styles.metric}>Accessibility</span>
-            <span className={styles.desc}>Navigabile per tutti gli utenti</span>
+          
+          <div className={styles.metricCard}>
+            <div className={styles.metricValue}>100%</div>
+            <div className={styles.metricLabel}>Uptime</div>
+            <div className={styles.metricSub}>0 crash durante il Black Friday</div>
           </div>
         </div>
       </div>

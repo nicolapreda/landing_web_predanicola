@@ -5,21 +5,25 @@ export default function CostOfSlow() {
     <section className={styles.section}>
       <div className={styles.container}>
         <h2 className={styles.title}>Quanto ti costa un sito lento?</h2>
+        <p className={styles.subtitle}>
+          Nel 2026, la velocità non è un lusso. È il fattore #1 per le vendite.
+        </p>
+        
         <div className={styles.grid}>
           <div className={styles.card}>
-            <span className={styles.number}>-53%</span>
-            <span className={styles.label}>Di visite mobile</span>
-            <p className={styles.desc}>Se il sito impiega più di 3 secondi a caricare.</p>
+            <div className={styles.number}>-7%</div>
+            <p className={styles.label}>Conversioni</p>
+            <p className={styles.description}>Per ogni secondo di ritardo nel caricamento.</p>
           </div>
           <div className={styles.card}>
-            <span className={styles.number}>-7%</span>
-            <span className={styles.label}>Sulle conversioni</span>
-            <p className={styles.desc}>Per ogni secondo di ritardo nel caricamento.</p>
+            <div className={styles.number}>40%</div>
+            <p className={styles.label}>Abbandono</p>
+            <p className={styles.description}>Degli utenti se il sito impiega più di 3 secondi.</p>
           </div>
           <div className={styles.card}>
-            <span className={styles.number}>SEO</span>
-            <span className={styles.label}>Penalizzazione Google</span>
-            <p className={styles.desc}>I Core Web Vitals sono fattore di ranking dal 2021.</p>
+            <div className={styles.number}>$$$</div>
+            <p className={styles.label}>Costi Nascosti</p>
+            <p className={styles.description}>Plugin, manutenzione continua e downtime improvvisi.</p>
           </div>
         </div>
       </div>

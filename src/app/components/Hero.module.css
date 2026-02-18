@@ -6,7 +6,7 @@
   padding: 8rem var(--container-padding) 4rem;
   position: relative;
   /* Transparent background to show global grid, or add specific glow */
-  background: radial-gradient(circle at 50% 50%, rgba(0, 34, 204, 0.15) 0%, transparent 60%);
+  background: radial-gradient(circle at 50% 50%, rgba(41, 98, 255, 0.15) 0%, transparent 60%);
   color: #ffffff;
 }
 
@@ -29,7 +29,7 @@
   color: #ffffff;
   text-transform: uppercase;
   margin-bottom: 1rem;
-  text-shadow: 0 0 40px rgba(0, 34, 204, 0.5); /* Glow effect */
+  text-shadow: 0 0 40px rgba(41, 98, 255, 0.5); /* Glow effect with electric blue */
 }
 
 .subheadline {
@@ -57,14 +57,14 @@
   text-transform: uppercase;
   letter-spacing: 0.05em;
   transition: all 0.2s;
-  box-shadow: 0 0 20px rgba(0, 34, 204, 0.4);
+  box-shadow: 0 0 20px rgba(41, 98, 255, 0.4);
   border: 1px solid rgba(255,255,255,0.1);
 }
 
 .primaryCta:hover {
   transform: translateY(-2px);
-  box-shadow: 0 0 40px rgba(0, 34, 204, 0.6);
-  background: #0033ff; /* Brighter on hover */
+  box-shadow: 0 0 40px rgba(41, 98, 255, 0.6);
+  background: #448aff; /* Brighter on hover */
 }
 
 .secondaryCta {
