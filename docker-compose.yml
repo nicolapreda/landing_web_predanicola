@@ -4,6 +4,8 @@ services:
   web:
     build: .
     container_name: landing_web_predanicola
+    env_file:
+      - .env.local
     restart: always
     ports:
       - "3007:3007"
