@@ -40,6 +40,8 @@
   display: flex;
   gap: 2rem;
   align-items: center;
+  margin: 0;
+  padding: 0;
 }
 
 .link {
@@ -48,6 +50,9 @@
   font-weight: 500;
   transition: color 0.2s;
   font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  height: 100%;
 }
 
 .link:hover {
@@ -64,6 +69,8 @@
   border: 1px solid rgba(255, 255, 255, 0.2);
   transition: all 0.2s;
   white-space: nowrap;
+  display: flex;
+  align-items: center;
 }
 
 .cta:hover {

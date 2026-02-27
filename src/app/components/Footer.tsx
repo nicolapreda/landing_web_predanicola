@@ -21,11 +21,12 @@ export default function Footer() {
           </div>
         </div>
         <div className={styles.bottom}>
-          <p className={styles.copyright}>© {new Date().getFullYear()} Nicola Preda. All rights reserved.</p>
+          <p className={styles.copyright}>© {new Date().getFullYear()} Nicola Preda.</p>
           <div className={styles.socials}>
-            <Link href="#" className={styles.link}>LinkedIn</Link>
-            <Link href="#" className={styles.link}>GitHub</Link>
-            <Link href="#" className={styles.link}>Email</Link>
+            <Link href="https://www.linkedin.com/in/nicola-preda-5b0722233/" target="_blank" rel="noopener noreferrer" className={styles.link}>LinkedIn</Link>
+            <Link href="https://github.com/nicolapreda" target="_blank" rel="noopener noreferrer" className={styles.link}>GitHub</Link>
+            <Link href="https://instagram.com/nicolapreda_" target="_blank" rel="noopener noreferrer" className={styles.link}>Instagram</Link>
+            <Link href="mailto:info@predanicola.it" className={styles.link}>Email</Link>
           </div>
         </div>
       </div>

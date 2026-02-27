@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-    const baseUrl = 'https://nicolapreda.it';
+    const baseUrl = 'https://web.predanicola.it';
 
     return [
         {

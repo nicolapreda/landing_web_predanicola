@@ -1,22 +1,13 @@
 .section {
   position: relative;
-  padding: var(--section-spacing) var(--container-padding);
+  padding: 8rem var(--container-padding);
   max-width: var(--container-width);
   margin: 0 auto;
   overflow: visible;
 }
 
-/* Using global body grid instead of local one to avoid easy misalignment */
 .gridBackground {
   display: none; 
-}
-
-.title {
-  font-size: 3rem;
-  font-weight: 700;
-  margin-bottom: 2rem;
-  color: #fff;
-  text-shadow: 0 0 20px rgba(41, 98, 255, 0.5); /* Electric Glow */
 }
 
 .content {
@@ -32,8 +23,43 @@
   gap: 1.5rem;
 }
 
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--primary-red);
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+.title {
+  font-size: 3.5rem;
+  font-weight: 800;
+  color: #fff;
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+
+.textBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.textHighlight {
+  font-size: 1.6rem;
+  font-weight: 400;
+  line-height: 1.4;
+  color: var(--text-secondary);
+}
+
+.textHighlight strong {
+  color: #fff;
+  font-weight: 700;
+}
+
 .text {
-  font-size: 1.25rem;
+  font-size: 1.2rem;
   line-height: 1.6;
   color: var(--text-secondary);
 }
@@ -41,6 +67,47 @@
 .text strong {
   color: #fff;
   font-weight: 600;
+}
+
+.resultBox {
+  margin-top: 1rem;
+  padding: 2rem;
+  background: rgba(255,255,255,0.02);
+  border-left: 3px solid var(--primary-blue);
+  border-radius: 0 12px 12px 0;
+}
+
+.resultLabel {
+  display: inline-block;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-secondary);
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.resultDesc {
+  font-size: 1.2rem;
+  line-height: 1.5;
+  color: #fff;
+}
+
+.resultDesc strong {
+  color: var(--primary-yellow);
+}
+
+.textClosing {
+  margin-top: 1rem;
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.highlightRed {
+  color: var(--primary-red);
+  font-weight: 700;
 }
 
 .imageContainer {
@@ -65,20 +132,29 @@
   object-fit: cover;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 900px) {
   .content {
     grid-template-columns: 1fr;
-    gap: 2rem;
+    gap: 4rem;
   }
   
   .title {
-    font-size: 2.5rem;
-    text-align: center;
+    font-size: 2.8rem;
   }
   
   .imageContainer {
-    max-width: 400px;
+    max-width: 500px;
     margin: 0 auto;
     transform: rotate(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 5rem var(--container-padding);
+  }
+  
+  .textHighlight {
+    font-size: 1.4rem;
   }
 }

@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
             allow: '/',
             disallow: '/private/',
         },
-        sitemap: 'https://nicolapreda.it/sitemap.xml',
+        sitemap: 'https://web.predanicola.it/sitemap.xml',
     };
 }

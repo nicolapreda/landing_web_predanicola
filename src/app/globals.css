@@ -38,46 +38,92 @@ main {
   width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 16rem; /* Huge gap for clear separation */
-  align-items: center; /* Center cards horizontally */
-  padding-bottom: 8rem;
+  align-items: center;
+  padding: 4rem 2rem;
+  gap: 10rem; /* Increased gap between cards */
 }
 
-@media (max-width: 768px) {
-  main {
-    gap: 6rem; /* Much smaller gap on mobile */
-    padding-bottom: 4rem;
-  }
-}
-
-.section-card {
-  background-color: var(--background);
-  /* Electric Blue Grid Pattern */
-  background-image: 
-    linear-gradient(var(--primary-blue-dim) 1px, transparent 1px),
-    linear-gradient(90deg, var(--primary-blue-dim) 1px, transparent 1px);
-  background-size: 50px 50px;
-  
+.card-wrapper {
   border-radius: 40px;
-  border: 1px solid var(--border-color);
-  box-shadow: 0 0 50px rgba(41, 98, 255, 0.1);
   overflow: hidden;
   width: 100%;
-  max-width: 1400px; /* Constrain max width for large screens */
-  margin: 0 auto 12rem auto; /* Center specifically AND add bottom margin */
-  padding: 4rem 2rem;
-  
-  /* Ensure content inside doesn't touch edges uncomfortably */
+  max-width: 1200px;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
+@media (min-width: 769px) {
+  .card-wrapper + .card-wrapper {
+    margin-top: 8rem; /* Space between cards on desktop */
+  }
+}
+
+.card-content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Force inner components to defer to the new unified spacing and backgrounds */
+.card-content > section,
+.card-content > div > section {
+  padding: 6rem 4rem !important; /* Adjusted inner padding for cards */
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  margin: 0 !important;
+  border-radius: 0 !important;
+}
+
+/* Variation 1: Glassmorphism */
+.card-glass {
+  background: rgba(5, 10, 31, 0.5);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(41, 98, 255, 0.2);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+}
+
+/* Variation 2: Solid Dark */
+.card-dark {
+  background-color: rgba(0, 2, 10, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Variation 3: Glowing Edge */
+.card-glow {
+  background: linear-gradient(180deg, rgba(0, 2, 10, 0.9) 0%, rgba(41, 98, 255, 0.05) 100%);
+  border: 1px solid rgba(41, 98, 255, 0.3);
+  box-shadow: 0 0 50px rgba(41, 98, 255, 0.08);
+}
+
 @media (max-width: 768px) {
-  .section-card {
-    margin: 0 1rem 4rem 1rem; /* Reduced bottom margin on mobile */
-    padding: 2rem 1rem;
-    border-radius: 20px;
+  main {
+    padding: 2rem 0; /* Removed horizontal padding on mobile */
+    gap: 4rem;
+  }
+
+  .card-wrapper {
+    border-radius: 0; /* Remove border radius since they touch the edges */
+    border: none;
+  }
+  
+  /* Remove backgrounds on mobile so the grid pattern shows cleanly */
+  .card-glass,
+  .card-dark,
+  .card-glow {
+    background: transparent !important;
+    background-color: transparent !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    border: none !important;
+    box-shadow: none !important;
+  }
+
+  .card-content > section,
+  .card-content > div > section {
+    padding: 3rem 1.5rem !important;
   }
 }
 
@@ -98,7 +144,12 @@ body {
 
 body {
   color: var(--foreground);
-  background: var(--background);
+  background-color: var(--background);
+  background-image: 
+    linear-gradient(var(--primary-blue-dim) 1px, transparent 1px),
+    linear-gradient(90deg, var(--primary-blue-dim) 1px, transparent 1px);
+  background-size: 50px 50px;
+  background-attachment: fixed;
   font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

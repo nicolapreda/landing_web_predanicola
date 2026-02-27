@@ -3,10 +3,11 @@ import Image from 'next/image';
 import styles from './Header.module.css';
 
 const navItems = [
-  { label: "Servizi", href: "#servizi" },
-  { label: "Stack", href: "#stack" },
-  { label: "Processo", href: "#processo" },
-  { label: "Contatti", href: "#contatti" }
+  { label: "Il Problema", href: "#problema" },
+  { label: "Approccio", href: "#approccio" },
+  { label: "Servizi", href: "#done-for-you" },
+  { label: "Progetti", href: "#progetti" },
+  { label: "Chi Sono", href: "#chi-sono" }
 ];
 
 export default function Header() {

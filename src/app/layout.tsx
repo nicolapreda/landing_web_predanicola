@@ -14,17 +14,17 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://nicolapreda.it'),
-  title: "Nicola Preda | Sviluppo Web Custom & Consulenza Next.js",
+  metadataBase: new URL('https://web.predanicola.it'),
+  title: "Nicola Preda | Sviluppo Web Custom",
   description: "Sviluppo siti web e applicazioni custom ad alte prestazioni. Specializzato in Next.js, React e Docker. Niente template, solo codice sartoriale per aziende ambiziose.",
   keywords: ["Sviluppo Web", "Next.js", "React", "Docker", "Sito Web Custom", "Consulenza SEO", "Performance Web", "Nicola Preda"],
-  authors: [{ name: "Nicola Preda", url: "https://nicolapreda.it" }],
+  authors: [{ name: "Nicola Preda", url: "https://web.predanicola.it" }],
   creator: "Nicola Preda",
   robots: "index, follow",
   openGraph: {
     type: "website",
     locale: "it_IT",
-    url: "https://nicolapreda.it",
+    url: "https://web.predanicola.it",
     title: "Nicola Preda | Sviluppo Web Custom & Consulenza Next.js",
     description: "Trasformo idee in codice performante. Siti web veloci, sicuri e scalabili costruiti con le migliori tecnologie moderne.",
     siteName: "Nicola Preda",
@@ -43,11 +43,6 @@ export const metadata: Metadata = {
     description: "Sviluppo siti web e applicazioni custom ad alte prestazioni.",
     images: ["/og-image.jpg"],
   },
-  icons: {
-    icon: "/favicon.ico",
-    shortcut: "/favicon.ico",
-    apple: "/apple-touch-icon.png",
-  },
 };
 
 export default function RootLayout({
@@ -59,8 +54,8 @@ export default function RootLayout({
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
     "name": "Nicola Preda Web Development",
-    "image": "https://nicolapreda.it/logo.webp",
-    "url": "https://nicolapreda.it",
+    "image": "https://web.predanicola.it/logo.webp",
+    "url": "https://web.predanicola.it",
     "telephone": "",
     "address": {
       "@type": "PostalAddress",
@@ -82,7 +77,8 @@ export default function RootLayout({
     },
     "sameAs": [
       "https://github.com/predanicola",
-      "https://linkedin.com/in/predanicola"
+      "https://www.linkedin.com/in/nicola-preda-5b0722233/",
+      "https://instagram.com/predanicola_"
     ]
   };
 

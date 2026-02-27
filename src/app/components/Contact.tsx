@@ -16,7 +16,7 @@ function SubmitButton() {
 
   return (
     <button type="submit" className={styles.button} disabled={pending}>
-      {pending ? 'Invio in corso...' : 'Richiedi Preventivo'}
+      {pending ? 'Invio in corso...' : 'Invia Messaggio'}
     </button>
   );
 }
@@ -35,8 +35,10 @@ export default function Contact() {
     <section className={styles.section} id="contatti">
       <div className={styles.container}>
         <div className={styles.intro}>
-          <p className={styles.warning}>Se vuoi un sito da template, non sono la persona giusta.</p>
-          <h2 className={styles.title}>Se vuoi una struttura digitale solida, pensata per crescere davvero,<br/>parliamone.</h2>
+          <p className={styles.warning}>Parliamo del tuo progetto. Nessuna pressione commerciale. Solo chiarezza.</p>
+          <h2 className={styles.title}>
+            Vuoi capire quanto ti sta costando il tuo sito attuale? Parliamone.
+          </h2>
         </div>
         
         <form className={styles.form} action={formAction} ref={formRef}>

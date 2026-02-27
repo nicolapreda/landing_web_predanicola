@@ -188,68 +188,105 @@
     border-color: #fff;
 }
 
-/* Visual Column */
+/* Visual Column (Desktop Mockup) */
 .visualColumn {
     display: flex;
     justify-content: center;
     align-items: center;
     position: relative;
-    height: 600px; /* height fix for stability */
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
 }
 
-.phoneWrapper {
+.desktopWrapper {
     position: relative;
     z-index: 5;
-    width: 300px; /* Adjust based on asset natural size */
-    height: auto;
-    filter: drop-shadow(0 20px 40px rgba(0,0,0,0.5));
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    background: #111;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
     transition: transform 0.3s ease;
 }
 
-.phoneWrapper:hover {
-    transform: translateY(-10px);
+.desktopWrapper:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 30px 60px -12px rgba(41, 98, 255, 0.2);
 }
 
-.phoneFrame {
-    width: 100%;
-    height: auto;
+.browserBar {
+    height: 32px;
+    background: #2a2a2a;
+    display: flex;
+    align-items: center;
+    padding: 0 16px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.browserDots {
+    display: flex;
+    gap: 8px;
+}
+
+.browserDots::before,
+.browserDots::after,
+.browserDots {
+    content: '';
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+
+.browserDots {
+    background: #ffbd2e; /* Yellow dot */
     position: relative;
-    z-index: 10;
-    pointer-events: none; /* Let clicks pass through if needed, but usually fine */
+    /* Ensure the dot has physical space so ::before doesn't get clipped by padding */
+    margin-left: 20px; 
 }
 
-/* The screen content needs to fit INSIDE the phone frame. 
-   This usually requires absolute positioning with top/left/width/height percentages 
-   based on the specific mockup image. 
-   Assuming standard iPhone 14/15 mockup:
-   Screen area is usually ~90-92% width and centered. */
-.screenContent {
+.browserDots::before {
     position: absolute;
-    top: 3%; /* Adjust these values based on actual mockup */
-    left: 4.5%;
-    width: 91%;
-    height: 94%;
-    border-radius: 35px; /* Adjust curvature */
-    overflow: hidden;
-    z-index: 1;
+    left: -20px;
+    background: #ff5f56; /* Red dot */
+}
+
+.browserDots::after {
+    position: absolute;
+    left: 20px;
+    background: #27c93f; /* Green dot */
+}
+
+.screenContent {
+    flex: 1;
+    position: relative;
+    width: 100%;
     background: #000;
+    overflow: hidden;
 }
 
 .screenImage {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: top; /* Show top of the website */
+    object-position: top;
+    /* Removed confusing transform transition */
 }
+
+/* Removed hover effect that causes the image to randomly slide up */
 
 .glowEffect {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 400px;
-    height: 400px;
-    background: radial-gradient(circle, rgba(41, 98, 255, 0.2) 0%, transparent 70%);
+    width: 80%;
+    height: 80%;
+    background: radial-gradient(circle, rgba(41, 98, 255, 0.15) 0%, transparent 60%);
     z-index: 1;
     pointer-events: none;
 }
