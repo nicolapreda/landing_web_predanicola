@@ -20,11 +20,7 @@ export default function Home() {
       <main className={styles.main}>
         <Header />
         
-        <div className="card-wrapper card-glow">
-          <div className="card-content">
-            <Hero />
-          </div>
-        </div>
+        <Hero />
         
         <div className="card-wrapper card-dark">
           <div className="card-content">

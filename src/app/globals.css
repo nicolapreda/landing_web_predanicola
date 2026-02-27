@@ -45,7 +45,6 @@ main {
 
 .card-wrapper {
   border-radius: 40px;
-  overflow: hidden;
   width: 100%;
   max-width: 1200px;
   display: flex;
@@ -123,7 +122,7 @@ main {
 
   .card-content > section,
   .card-content > div > section {
-    padding: 3rem 1.5rem !important;
+    padding: 3rem 0rem !important;
   }
 }
 
