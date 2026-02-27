@@ -156,11 +156,12 @@
 
 @media (max-width: 768px) {
   .headline {
-    font-size: 3.5rem; /* Increased from 2.5rem */
-    line-height: 0.9;
+    font-size: 3.2rem; /* Slightly reduced for better fit */
+    line-height: 1; /* More breathing room between lines */
+    letter-spacing: -0.04em; /* Tighter letter spacing to fit words better */
     padding: 30px 10px; /* Added padding to prevent shadow clipping */
     margin-top: -30px; /* Offset the padding */
-    margin-bottom: calc(1.5rem - 30px);
+    margin-bottom: calc(1rem - 30px);
   }
 
   .subheadline {
